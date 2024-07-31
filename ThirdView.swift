@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct ThirdView: View {
+    @State private var category1 = ""
+    @State private var category2 = ""
+    @State private var category3 = ""
+    
+    
+    
     var body: some View {
         ZStack {
             Color.teal.opacity(0.8)
@@ -17,11 +23,15 @@ struct ThirdView: View {
                 Text("Plan your budget for the week")
                 Button("Add a category")
                 {
-                    TextField("", text: Value)
+                    TextField(/*@START_MENU_TOKEN@*/"Placeholder"/*@END_MENU_TOKEN@*/, text: $category1)
                 }
+                .buttonStyle(.borderedProminent)
+                .tint(.orange)
+
+               
+               
                 
-                
-                
+               
             }
             
         }
