@@ -10,6 +10,9 @@
 import SwiftUI
 
 struct SecondView: View {
+
+    @Binding var firstName: String
+    
     var body: some View {
         ZStack{
             Color.teal.opacity(0.8)
@@ -17,7 +20,7 @@ struct SecondView: View {
             VStack(spacing: 20.0){
                 
     //Needs to display firstName from screen 1 as [user]
-                Text("Hello, [User]")
+                Text("Hello, \(String(firstName))")
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     .bold()
                     .foregroundStyle(.white)
@@ -38,6 +41,6 @@ struct SecondView: View {
     }
 }
 
-#Preview {
-    SecondView()
-}
+//#Preview {
+  //  SecondView(firstName : "")
+//}

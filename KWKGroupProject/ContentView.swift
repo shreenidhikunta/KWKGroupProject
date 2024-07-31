@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var firstName = ""
+    @State private var firstName: String = ""
     @State private var lastName = ""
     var body: some View {
         NavigationStack {
@@ -72,7 +72,7 @@ struct ContentView: View {
                     
                     
                     
-                    NavigationLink(destination: SecondView())
+                    NavigationLink(destination: SecondView(firstName: self.$firstName))
                     {
                         Capsule()
                         .fill(Color.orange)
