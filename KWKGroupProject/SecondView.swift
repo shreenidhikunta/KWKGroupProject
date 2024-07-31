@@ -14,28 +14,34 @@ struct SecondView: View {
     @Binding var firstName: String
     
     var body: some View {
-        ZStack{
-            Color.teal.opacity(0.8)
-                .ignoresSafeArea()
-            VStack(spacing: 20.0){
-                
-    //Needs to display firstName from screen 1 as [user]
-                Text("Hello, \(String(firstName))")
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                    .bold()
-                    .foregroundStyle(.white)
-                
-                Text("Your Current Balance is: ")
-                    .foregroundStyle(.white)
-                
-                Text("$200.00")
-                    .foregroundStyle(.white)
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                    .bold()
-                    .opacity(1.0)
-                
-                
-                
+        NavigationStack {
+            ZStack{
+                Color.teal.opacity(0.8)
+                    .ignoresSafeArea()
+                VStack(spacing: 20.0){
+                    
+                    //Needs to display firstName from screen 1 as [user]
+                    Text("Hello, \(String(firstName))")
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .bold()
+                        .foregroundStyle(.white)
+                    
+                    Text("Your Current Balance is: ")
+                        .foregroundStyle(.white)
+                    
+                    Text("$200.00")
+                        .foregroundStyle(.white)
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .bold()
+                        .opacity(1.0)
+                    
+                    
+                    
+                }
+            }
+            NavigationLink(destination: ThirdView())
+            {
+                Text("Next")
             }
         }
     }

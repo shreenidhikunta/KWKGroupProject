@@ -9,7 +9,22 @@ import SwiftUI
 
 struct ThirdView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Color.teal.opacity(0.8)
+                .ignoresSafeArea()
+            VStack(spacing: 20.0){
+                Text("Budgeting Map")
+                Text("Plan your budget for the week")
+                Button("Add a category")
+                {
+                    TextField("", text: Value)
+                }
+                
+                
+                
+            }
+            
+        }
     }
 }
 
