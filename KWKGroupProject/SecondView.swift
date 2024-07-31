@@ -41,6 +41,6 @@ struct SecondView: View {
     }
 }
 
-//#Preview {
-  //  SecondView(firstName : "")
-//}
+#Preview {
+    ContentView()
+}

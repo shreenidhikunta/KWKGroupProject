@@ -11,6 +11,7 @@ struct ContentView: View {
     
     @State private var firstName: String = ""
     @State private var lastName = ""
+    @State private var password = ""
     var body: some View {
         NavigationStack {
             ZStack{
@@ -62,7 +63,7 @@ struct ContentView: View {
                     Text(" Password:")
                         .foregroundStyle(.white)
                     
-                    TextField("", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
+                    SecureField("", text: $password)
                         .multilineTextAlignment(.center)
                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                         .background(Color.white.opacity(0.4))
