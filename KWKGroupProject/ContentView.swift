@@ -17,8 +17,8 @@ struct ContentView: View {
                 Color.teal.opacity(0.8)
                     .ignoresSafeArea()
                 
-                VStack (alignment: .center, spacing: 22.0){
-//Center "Create new Account"
+                VStack (spacing: 22.0){
+
                     Text("Create new account")
                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                         .foregroundStyle(.white)
@@ -26,7 +26,7 @@ struct ContentView: View {
                     
                     Text(" First Name:")
                         .foregroundStyle(.white)
-                        .multilineTextAlignment(.leading)
+                    
                     TextField("", text: $firstName)
                         .multilineTextAlignment(.center)
                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
@@ -38,6 +38,8 @@ struct ContentView: View {
                     
                     Text(" Last Name:")
                         .foregroundStyle(.white)
+                    
+
                     TextField("", text: $lastName)
                         .multilineTextAlignment(.center)
                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
@@ -47,6 +49,7 @@ struct ContentView: View {
                     
                     Text(" Email:")
                         .foregroundStyle(.white)
+                    
                     TextField("", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
                         .multilineTextAlignment(.center)
                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
@@ -58,6 +61,7 @@ struct ContentView: View {
                     
                     Text(" Password:")
                         .foregroundStyle(.white)
+                    
                     TextField("", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
                         .multilineTextAlignment(.center)
                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
@@ -70,7 +74,14 @@ struct ContentView: View {
                     
                     NavigationLink(destination: SecondView())
                     {
-                        Text("Sign Up")
+                        Capsule()
+                        .fill(Color.orange)
+                        .frame(width: 200, height: 50)
+                        .overlay(Text("Sign Up")
+                            .bold()
+                            .foregroundStyle(.white)
+                        )
+                                 
                     }
                     .navigationTitle("Home")
                     .navigationBarHidden(true)

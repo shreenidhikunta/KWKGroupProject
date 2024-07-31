@@ -32,6 +32,7 @@ struct SecondView: View {
                     .opacity(1.0)
                 
                 
+                
             }
         }
     }
