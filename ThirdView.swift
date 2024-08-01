@@ -14,7 +14,9 @@ struct ThirdView: View {
     @State private var category1On = false
     @State private var category2On = false
     @State private var category3On = false
-    
+    @State private var value1 = ""
+    @State private var value2 = ""
+    @State private var value3 = ""
     
     
     var body: some View {
@@ -26,10 +28,22 @@ struct ThirdView: View {
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     .bold()
                     .foregroundStyle(.white)
-                Text("Plan your budget for the week")
+                
+                Text("Your weekly budget:")
+                    .foregroundStyle(.white)
+                
+                Text("$25.00")
+                    .foregroundStyle(.white)
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    .bold()
+                    .opacity(1.0)
+                
+                
+                Text("Split your weekly budget into categories! Examples of categories - food, clothing, technology")
                     .font(.headline)
                     .bold()
                     .foregroundStyle(.white)
+                    .tint(.orange)
                     .padding()
                 
                
@@ -50,8 +64,13 @@ struct ThirdView: View {
                     }
                     else
                     {
-                        TextField("Enter value here", text: $category1)
-                            .multilineTextAlignment(.center)
+                        HStack {
+                            TextField("Enter category here", text: $category1)
+                                .multilineTextAlignment(.center)
+                            TextField("$", text: $value1)
+                                .multilineTextAlignment(.center)
+                        }
+                        .padding()
                     }
                     if (!category2On)
                     {
@@ -67,23 +86,29 @@ struct ThirdView: View {
                     
                     else
                     {
-                        TextField("Enter value here", text: $category2)
+                        TextField("Enter category here", text: $category2)
+                            .multilineTextAlignment(.center)
+                        TextField("Enter amount of money", text: $value2)
                             .multilineTextAlignment(.center)
                     }
                     if (!category3On)
                     {
-                        Button("+ Add a category")
-                        {
-                            category3On = true
+                        HStack {
+                            Button("+ Add a category")
+                            {
+                                category3On = true
+                            }
+                            .opacity(!category3On ? 1: 0)
+                            .buttonStyle(.borderedProminent)
+                            .tint(.orange)
+                            .padding()
                         }
-                        .opacity(!category3On ? 1: 0)
-                        .buttonStyle(.borderedProminent)
-                        .tint(.orange)
-                        .padding()
                     }
                     else
                     {
-                        TextField("Enter value here", text: $category3)
+                        TextField("Enter category here", text: $category3)
+                            .multilineTextAlignment(.center)
+                        TextField("Enter amount of money", text: $value3)
                             .multilineTextAlignment(.center)
                     }
                     
