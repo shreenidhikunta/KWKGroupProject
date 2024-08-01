@@ -34,6 +34,7 @@ struct ContentView: View {
                         .background(Color.white.opacity(0.4))
                         .cornerRadius(10.0)
                         .foregroundStyle(.white)
+                        .shadow(color : .gray, radius : 4)
                     
                     
                     
@@ -47,6 +48,7 @@ struct ContentView: View {
                         .background(Color.white.opacity(0.4))
                         .cornerRadius(10.0)
                         .foregroundStyle(.white)
+                        .shadow(color : .gray, radius : 4)
                     
                     Text(" Email:")
                         .foregroundStyle(.white)
@@ -57,6 +59,7 @@ struct ContentView: View {
                         .background(Color.white.opacity(0.4))
                         .cornerRadius(10.0)
                         .foregroundStyle(.white)
+                        .shadow(color : .gray, radius : 4)
                         .autocorrectionDisabled()
                         .textInputAutocapitalization(.never)
                     
@@ -69,6 +72,7 @@ struct ContentView: View {
                         .background(Color.white.opacity(0.4))
                         .cornerRadius(10.0)
                         .foregroundStyle(.white)
+                        .shadow(color : .gray, radius : 4)
                         .textInputAutocapitalization(.never)
                     
                     
@@ -78,6 +82,7 @@ struct ContentView: View {
                         Capsule()
                         .fill(Color.orange)
                         .frame(width: 200, height: 50)
+                        .shadow(color : .gray, radius : 4)
                         .overlay(Text("Sign Up")
                             .bold()
                             .foregroundStyle(.white)

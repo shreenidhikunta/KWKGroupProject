@@ -35,13 +35,30 @@ struct SecondView: View {
                         .bold()
                         .opacity(1.0)
                     
+                    Text("Your weekly budget:")
+                        .foregroundStyle(.white)
                     
+                    Text("$25.00")
+                        .foregroundStyle(.white)
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .bold()
+                        .opacity(1.0)
+                    
+                    
+                    NavigationLink(destination: ThirdView())
+                    {
+                        Capsule()
+                            .fill(.white)
+                            .frame(width: 200, height: 50)
+                            .shadow(color : .gray, radius : 4)
+                            .overlay(Text("Budgeting Map")
+                                .bold()
+                                .foregroundStyle(.orange)
+                            )
+                                     
+                    }
                     
                 }
-            }
-            NavigationLink(destination: ThirdView())
-            {
-                Text("Next")
             }
         }
     }
